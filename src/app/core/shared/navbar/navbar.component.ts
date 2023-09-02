@@ -35,6 +35,9 @@ export class NavbarComponent implements OnInit {
       case 3:
         this.tab = 'tab3';
         break;
+      case 4:
+        this.tab = 'tab4';
+        break;
     }
   }
 

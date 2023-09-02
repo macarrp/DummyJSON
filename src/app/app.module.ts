@@ -10,6 +10,7 @@ import { SpinnerInterceptor } from './core/shared/interceptors/spinner.intercept
 import { FooterComponent } from './core/shared/footer/footer.component';
 import { NavbarComponent } from './core/shared/navbar/navbar.component';
 import { PaginationComponent } from './core/shared/pagination/pagination.component';
+import { AboutComponent } from './modules/about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PaginationComponent } from './core/shared/pagination/pagination.compone
     FooterComponent,
     NavbarComponent,
     PaginationComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
