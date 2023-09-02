@@ -1,0 +1,24 @@
+<nav *ngIf="totalElements > elementsToDisplay">
+    <ul class="pagination">
+        <!-- <li class="page-item">
+            <a class="page-link" href="#" aria-label="Anterior" title="Anterior">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li> -->
+        <li *ngFor="let page of pagesArray; index as i" class="page-item">
+            <a class="page-link" style="cursor: pointer;" (click)="cargarPagina(i)">
+                {{ i + 1 }}
+            </a>
+        </li>
+        <!-- <li class="page-item">
+            <a class="page-link" href="#" aria-label="Siguiente" title="Siguiente">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li> -->
+
+        <div class="m-1 p-1">
+            Total de elementos encontrados: <strong>{{ totalElements }}</strong>
+        </div>
+    </ul>
+
+</nav>

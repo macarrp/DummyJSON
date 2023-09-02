@@ -9,6 +9,7 @@ import { SpinnerComponent } from './core/shared/spinner/spinner.component';
 import { SpinnerInterceptor } from './core/shared/interceptors/spinner.interceptor';
 import { FooterComponent } from './core/shared/footer/footer.component';
 import { NavbarComponent } from './core/shared/navbar/navbar.component';
+import { PaginationComponent } from './core/shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NavbarComponent } from './core/shared/navbar/navbar.component';
     ProductComponent,
     FooterComponent,
     NavbarComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

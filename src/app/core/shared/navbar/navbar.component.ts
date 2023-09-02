@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,8 +10,18 @@ export class NavbarComponent implements OnInit {
 
   tab: string = 'tab1';
 
+  constructor(private readonly router: Router) { 
+
+  }
+
   ngOnInit() { 
-    this.changeActive(1); // <-- No lo esta pillando
+    this.selectTabAfterInit()
+  }
+
+  selectTabAfterInit() {
+    // console.log(this.router)
+    // console.log(this.router.url === '/productos')
+    // this.changeActive(1); // Poner el numero adecuado segun la ruta
   }
 
   changeActive(elementToActive: number) {
@@ -31,3 +42,4 @@ export class NavbarComponent implements OnInit {
     console.log('showCart')
   }
 }
+

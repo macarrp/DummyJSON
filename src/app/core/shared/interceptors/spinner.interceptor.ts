@@ -6,12 +6,12 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable, finalize } from 'rxjs';
-import { UiService } from '../../services/config/ui.service';
+import { SpinnerService } from '../../services/config/spinner.service';
 
 @Injectable()
 export class SpinnerInterceptor implements HttpInterceptor {
 
-  constructor(private readonly uiService: UiService) {}
+  constructor(private readonly uiService: SpinnerService) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler

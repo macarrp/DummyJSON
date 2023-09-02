@@ -1,6 +1,32 @@
-<section>
-    <p><strong>Productos</strong></p>
-    <div *ngFor="let product of products" class="d-flex">
-        <p>{{ product.id }} {{ product.title }}</p>
+<section *ngIf="cargado" class="container">
+    
+    <div class="d-flex justify-content-around">
+        <h1><strong>Productos</strong></h1>
+        <div class="col-md-5 mx-auto d-flex border rounded-pill">
+            <div class="input-group">
+                <input class="form-control" type="search" placeholder="Buscar..." #search>
+            </div>
+            <button class="btn" type="button" (click)="searchProduct(search.value)">
+                <img src="assets/icons/search-interface-symbol.png" alt="Buscar" title="Buscar" width="16" height="16">
+            </button>
+        </div>
+    </div>
+
+    <app-pagination 
+        [totalElements]="totalProductsAPI" 
+        [elementsToDisplay]="limit"
+        (pageClicked)="cargarPagina($event)">
+    </app-pagination>
+
+    <div class="row d-flex ">
+        <div *ngFor="let product of products" class="card m-2 p-2" style="width: 18rem;">
+            <img src="{{ product.thumbnail }}" class="card-img-top" alt="Logotipo {{ product.id }}"
+                width="18rem" title="Logo {{ product.id }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <a [routerLink]="['/productos', product.id]" class="btn btn-primary">Ver</a>
+            </div>
+        </div>
     </div>
 </section>

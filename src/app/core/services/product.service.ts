@@ -13,7 +13,11 @@ export class ProductService {
 
   constructor(private readonly http: HttpClient) { }
 
-  getAllPaginated(limit = 0, skip = 0): Observable<ResponseProduct> { 
+  getAllPaginated(limit: number, skip: number): Observable<ResponseProduct> { 
     return this.http.get<ResponseProduct>(`${this.URL_API}products?limit=${limit}&skip=${skip}`)
+  }
+
+  searchProduct(text: string): Observable<ResponseProduct> {
+    return this.http.get<ResponseProduct>(`${this.URL_API}products/search?q=${text}`)
   }
 }

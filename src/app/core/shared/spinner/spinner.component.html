@@ -1,2 +1,4 @@
-<div *ngIf="(uiService.isLoading$ | async)" class="loader spinner-overlay">
+<div *ngIf="(spinnerService.isLoading$ | async)" 
+    class="loader spinner-overlay"
+    role="status">
  </div>

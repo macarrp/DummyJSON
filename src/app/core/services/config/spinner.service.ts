@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UiService {
+export class SpinnerService {
 
   apiCount = 0;
   isLoadingSubject = new BehaviorSubject<boolean>(false);
