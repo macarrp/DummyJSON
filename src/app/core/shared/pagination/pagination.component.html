@@ -6,7 +6,7 @@
             </a>
         </li> -->
         <li *ngFor="let page of pagesArray; index as i" class="page-item">
-            <a class="page-link" style="cursor: pointer;" (click)="cargarPagina(i)">
+            <a class="page-link" [ngClass]="{'active': currentPage === i}" style="cursor: pointer;" (click)="cargarPagina(i)">
                 {{ i + 1 }}
             </a>
         </li>
@@ -16,7 +16,7 @@
             </a>
         </li> -->
 
-        <div class="m-1 p-1">
+        <div class="m-1 mx-5 p-1">
             Total de elementos encontrados: <strong>{{ totalElements }}</strong>
         </div>
     </ul>

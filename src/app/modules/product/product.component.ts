@@ -55,5 +55,28 @@ export class ProductComponent implements OnInit {
     })
   }
 
+  getDescription(product: Product): string {
+    const trimFrom = 80;
+    return product.description.length < trimFrom ? product.description : product.description.slice(0, trimFrom) + '...';
+  }
+
+  getNumberOfStars(product: Product): number {
+    return Math.round(product.rating)
+  }
+
+  // getStarRating(product: Product) {
+  //   const numberOfStars = this.getNumberOfStars(product);
+  //   const htmlElements = [];
+
+  //   for(let i = 0; i < 5; i++) {
+  //     htmlElements.push({
+        
+  //     })
+  //   }
+  // }
+
+  getDiscountedPrice(product: Product): number {
+    return product.price * (1 - (product.discountPercentage / 100));
+  }
 
 }

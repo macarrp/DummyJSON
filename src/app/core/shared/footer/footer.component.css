@@ -1,6 +1,8 @@
-/* footer {
-    margin-top: auto;
-} */
+footer {
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
 
 .zoom  {
     transition: transform .2s;
