@@ -17,7 +17,10 @@ export class ProductComponent implements OnInit {
   limit = 12;
   skip = 0;
 
-  constructor(private readonly productService: ProductService) {}
+  constructor(
+      private readonly productService: ProductService
+    ) 
+    { }
 
   ngOnInit(): void {
     this.cargarPagina(0);
@@ -79,4 +82,7 @@ export class ProductComponent implements OnInit {
     return product.price * (1 - (product.discountPercentage / 100));
   }
 
+  openModal(product: Product) {
+    alert('Modal no implementado todavóa 😢')
+  }
 }

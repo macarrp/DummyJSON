@@ -60,7 +60,11 @@
                 </div>
 
                 <div class="position-absolute" style="bottom: 5px;">
-                    <a [routerLink]="['/productos', product.id]" class="btn btn-primary">Ver</a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                        data-bs-target="#productModal" data-bs-whatever="@mdo"
+                        (click)="openModal(product)">
+                        Ver 
+                    </button>
                 </div>
             </div>
         </div>
