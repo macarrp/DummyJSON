@@ -5,8 +5,7 @@ import { ProductComponent } from './modules/product/product.component';
 import { AboutComponent } from './modules/about/about.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent, title: 'Akafon | Tienda online'},
-  {path: '', redirectTo:'/home', pathMatch: 'full'},
+  {path: '', component: HomeComponent, title: 'Akafon | Tienda online'},
   {path: 'productos', component: ProductComponent, title: 'Akafon | Productos'},
   {path: 'usuarios', component: ProductComponent, title: 'Akafon | Usuarios'},
   {path: 'carritos', component: ProductComponent},

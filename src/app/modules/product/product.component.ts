@@ -83,6 +83,6 @@ export class ProductComponent implements OnInit {
   }
 
   openModal(product: Product) {
-    alert('Modal no implementado todavóa 😢')
+    alert('Modal no implementado todavía 😢')
   }
 }
