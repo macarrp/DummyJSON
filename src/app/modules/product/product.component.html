@@ -7,16 +7,16 @@
 
         <div class="col"></div>
 
-        <div class="col-5 d-flex border rounded-pill">
-            <div class="input-group">
-                <input class="form-control" type="search" #search
+        <div class="col-5 d-flex rounded-pill">
+            <div class="input-group" style="height: 40px;">
+                <input class="form-control" type="search" #search 
                 (keydown.enter)="searchProduct(search.value)" placeholder="Buscar..." >
-            </div>
-            <button class="btn" type="button" (click)="searchProduct(search.value)">
-                <img src="assets/icons/search-interface-symbol.png" alt="Buscar" title="Buscar" width="16" height="16">
-            </button>
+                <a class="btn border" (click)="searchProduct(search.value)">
+                    <img src="assets/icons/search-interface-symbol.png" alt="Buscar" title="Buscar" width="32" height="32">
+                </a>
+            </div>            
         </div>
-        <div class="col"></div>
+        <!-- <div class="col"></div> -->
     </div>
 
     <app-pagination 
@@ -25,7 +25,7 @@
         (pageClicked)="cargarPagina($event)">
     </app-pagination>
 
-    <div class="row d-flex">
+    <div class="row d-flex mb-3">
         <div *ngFor="let product of products" class="card m-1 p-2" style="width: 18rem;">
             <div class="p-2">
                 <img src="{{ product.thumbnail }}" class="card-img-top main-logo" alt="Logotipo {{ product.id }}"
@@ -34,7 +34,7 @@
             </div>
             <div class="card-body ">
                 <h5 class="card-title">{{ product.title }}</h5>
-                <p class="card-text" title="{{ product.description  }}">{{ getDescription(product) }}</p>
+                <p class="card-text" title="{{ product.description }}">{{ getDescription(product) }}</p>
                 
                 <div class="d-flex">
                     <p class="fst-italic">Valoración: {{ product.rating }}/5</p>
@@ -59,9 +59,9 @@
                     </p>
                 </div>
 
-                <div class="position-absolute" style="bottom: 5px;">
+                <div class="">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
-                        data-bs-target="#productModal">
+                        data-bs-product="product" data-bs-target="#productModal">
                         Ver 
                     </button>
                 </div>
@@ -70,18 +70,19 @@
     </div>
   
   <!-- Modal -->
-  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="productModalLabel">Titulo del producto</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Info del producto
+          <p>Info del producto</p>
+          <p>Carousel con las imagenes del prod</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>

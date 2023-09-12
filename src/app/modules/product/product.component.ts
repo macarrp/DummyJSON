@@ -59,8 +59,8 @@ export class ProductComponent implements OnInit {
   }
 
   getDescription(product: Product): string {
-    const trimFrom = 80;
-    return product.description.length < trimFrom ? product.description : product.description.slice(0, trimFrom) + '...';
+    const trimFrom = 50;
+    return product.description.length < trimFrom ? product.description : product.description.slice(0, trimFrom) + ' ...';
   }
 
   getNumberOfStars(product: Product): number {
@@ -80,9 +80,5 @@ export class ProductComponent implements OnInit {
 
   getDiscountedPrice(product: Product): number {
     return product.price * (1 - (product.discountPercentage / 100));
-  }
-
-  openModal(product: Product) {
-    alert('Modal no implementado todavía 😢')
   }
 }
