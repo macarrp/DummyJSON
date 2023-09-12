@@ -61,12 +61,29 @@
 
                 <div class="position-absolute" style="bottom: 5px;">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
-                        data-bs-target="#productModal" data-bs-whatever="@mdo"
-                        (click)="openModal(product)">
+                        data-bs-target="#productModal">
                         Ver 
                     </button>
                 </div>
             </div>
         </div>
     </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Info del producto
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

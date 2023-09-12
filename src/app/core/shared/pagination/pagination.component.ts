@@ -17,7 +17,7 @@ export class PaginationComponent implements OnInit {
   currentPage = 0;
 
   ngOnInit(): void {
-    this.totalPages = Math.floor(this.totalElements / this.elementsToDisplay)
+    this.totalPages = Math.ceil(this.totalElements / this.elementsToDisplay)
     this.pagesArray = new Array(this.totalPages);
   }
 
